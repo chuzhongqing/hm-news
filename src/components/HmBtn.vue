@@ -1,11 +1,18 @@
 <template>
-  <div class="btn">
+  <div class="btn" @click="fn">
     <slot></slot>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    fn() {
+      //字传父 让父级组件触发事件
+      this.$emit("click");
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
