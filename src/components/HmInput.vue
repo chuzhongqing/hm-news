@@ -24,13 +24,16 @@ export default {
       console.log(e.target.value);
 
       this.$emit("input", e.target.value);
+      this.validate(e.target.value);
+    },
+    validate(value) {
       if (this.rule) {
-        if (this.rule.test(e.target.value)) {
+        if (this.rule.test(value)) {
           this.status = "success";
-          console.log(this.status);
+          return true;
         } else {
           this.status = "error";
-          console.log(this.status);
+          return false;
         }
       }
     }

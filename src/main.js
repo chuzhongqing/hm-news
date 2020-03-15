@@ -12,6 +12,10 @@ axios.defaults.baseURL='http://localhost:3000'
 Vue.prototype.$axios=axios
 Vue.config.productionTip = false
 
+import {Button, Field,Toast} from 'vant'
+Vue.use(Button)
+Vue.use(Field)
+Vue.use(Toast)
 import HmHeader from './components/HmHeader.vue'
 import HmLogo from './components/HmLogo.vue'
 import HmBtn from './components/HmBtn.vue'
